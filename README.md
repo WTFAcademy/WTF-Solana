@@ -1,1 +1,29 @@
-# WTF-Solana
+# WTF Solana 教程
+
+WTF Solana 教程由 [WTF Academy](https://wtf.academy) 和 [ChainBuff](https://chainbuff.com) 共同推出，旨在帮助开发者快速上手 Solana 开发。
+
+## Part1: Solana 基本架构
+负责人 Inky @XingqiWang
+
+
+## Part2: Solana Web3.js 极简教程
+负责人 0xAA @AmazingAng
+
+Solana web3.js是一个完整而简洁的JavaScript库，可以让开发者便捷地与Solana区块链交互，与以太坊的ethers.js库类似。你需要使用npm安装它：
+
+```bash
+npm install @solana/web3.js@1.98.0
+```
+
+**第1讲：Hello Solana**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/01_HelloSolana/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/01_HelloSolana/01_HelloSolana.ts)】
+
+
+## Part3: Solana 智能合约开发
+负责人 Haynar @0xhay
+
+
+## 参考资料
+
+1. [WTF Ethers.js 教程 by WTF Academy](https://github.com/WTFAcademy/WTF-Ethers)
+2. [solana-web3js 教程 by ChainBuff](https://github.com/ChainBuff/solana-web3js)
+3. [Solana Executive Overview by Helius](https://www.helius.dev/blog/solana-executive-overview)
