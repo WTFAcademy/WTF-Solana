@@ -1,5 +1,5 @@
 ---
-title: 2. 创建钱包 & 导入钱包
+title: 2. 钱包
 tags:
   - solana
   - javascript
