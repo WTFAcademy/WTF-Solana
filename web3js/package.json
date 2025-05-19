@@ -1,0 +1,22 @@
+{
+    "name": "pump-fun-token-launcher",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "@solana/spl-token": "^0.4.6",
+        "@solana/web3.js": "^1.98.0",
+        "axios": "^1.6.8",
+        "bigint-buffer": "^1.1.5",
+        "bs58": "^5.0.0"
+    }
+}
