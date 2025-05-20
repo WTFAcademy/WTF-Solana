@@ -8,7 +8,7 @@ tags:
   - blockchain
 ---
 
-# WTF Solana Web3.js 极简教程: 2. 创建钱包 & 导入钱包
+# WTF Solana Web3.js 极简教程: 2. 钱包
 
 WTF Solana Web3.js 极简教程属于 WTF Solana 教程的一部分，由 WTF Academy 和 ChainBuff 共同推出。
 
