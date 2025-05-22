@@ -141,7 +141,7 @@ Base58 编码后的私钥: E6S4WWG3onkuAFPCmPfvnas2hsSQ2APPN6DHBU4bcYB97YmLmc7Px
 
 ## 5. 总结
 
-本讲中，我们学习了如何用 Web3.js：
+这一讲中，我们学习了如何用 Web3.js：
 
 - 创建一个新的 Solana 钱包（Keypair）
 - 保存并导出私钥（使用 base58 编码）
