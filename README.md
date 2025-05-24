@@ -17,10 +17,17 @@ npm install @solana/web3.js@1.98.0
 
 **第1讲：Hello Solana**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/01_HelloSolana/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/01_HelloSolana/01_HelloSolana.ts)】
 
+**第2讲：钱包**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/02_Wallet/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/02_Wallet/02_Wallet.ts)】
+
+<!--
+**第3讲：账户**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/03_Account/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/03_Account/03_Account.ts)】
+
+**第4讲：读取账户**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/04_Account/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/04_Account/04_Get.ts)】
+
+-->
 
 ## Part3: Solana 智能合约开发
 负责人 Haynar @0xhay
-
 
 ## 参考资料
 
