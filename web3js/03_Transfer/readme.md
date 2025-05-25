@@ -85,7 +85,7 @@ const receiver = new PublicKey("4xxeGf2jZAyLVW1sEELTJy2Fd4hwRerNTDCg8ZQuH4tn");
 const main = async () => {
    // 1. 打印当前发送者余额
    const balance = await connection.getBalance(sender.publicKey);
-   console.log(`💰 当前余额: ${balance / LAMPORTS_PER_SOL} SOL`);
+   console.log(`当前余额: ${balance / LAMPORTS_PER_SOL} SOL`);
 
    // 2. 构建转账指令（0.001 SOL）
    const instruction = SystemProgram.transfer({
@@ -116,7 +116,7 @@ main();
 ### 输出样例
 
 ```
-💰 当前余额: 0.1 SOL
+当前余额: 0.1 SOL
 模拟交易结果:  {
   context: { apiVersion: '2.2.14', slot: 341716177 },
   value: {
