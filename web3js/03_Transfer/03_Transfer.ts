@@ -36,7 +36,10 @@ import {
     // 3. 创建交易
     const transaction = new Transaction().add(instruction);
   
-      
+    console.log("recentBlockhash", transaction.recentBlockhash);
+    console.log("lastValidBlockHeight", transaction.lastValidBlockHeight);
+    console.log("nonceInfo", transaction.nonceInfo);
+
     // 4. 模拟交易
     const simulateResult = await connection.simulateTransaction(transaction, [sender]);
     console.log("模拟交易结果: ", simulateResult);

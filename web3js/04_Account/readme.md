@@ -57,6 +57,8 @@ console.log(JSON.stringify(accountInfo, null, 2));
 
 ### 输出样例
 
+由于这是一个钱包账户，因此 `executable = false`，`data` 为空，`owner` 为系统程序，钱包中的余额为 `96302360` lamports，也就是 `0.096302360` SOL。
+
 ```
 {
   "data": {
@@ -93,7 +95,7 @@ console.log(JSON.stringify(accountInfo, null, 2));
 - `data` 存储的是 BPF 字节码（Rust 编译产物，类似以太坊的EVM字节码）
 
 
-另外还有用于存储系统数据（如 `clock` `fees`）的 `Sysvar` 账户，数据帐户，程序数据账户（PDA）等账户类型，我们会在之后的教程中逐个介绍。
+另外还有用于存储系统数据（如 `clock` `fees`）的 `Sysvar` 账户，数据帐户等账户类型，我们会在之后的教程中逐个介绍。
 
 
 ## 4. 创建账户
