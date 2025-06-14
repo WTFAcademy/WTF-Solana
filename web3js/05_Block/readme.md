@@ -13,9 +13,7 @@ tags:
 
 # WTF Solana Web3.js 极简教程：第 5 讲：Slot 与 Block
 
-本讲将介绍 Solana 链上的时间机制核心：`slot`（插槽）与 `block`（区块），以及如何通过 Web3.js 读取相关信息。
-
----
+这一讲，我们将介绍 Solana 链上的时间机制核心：`slot`（插槽）与 `block`（区块），以及如何通过 Web3.js 读取相关信息。
 
 ## 1. 什么是 Slot 与 Block？
 
