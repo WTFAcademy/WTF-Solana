@@ -21,9 +21,9 @@ npm install @solana/web3.js@1.98.0
 
 **第3讲：转账 Sol**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/03_Transfer/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/03_Transfer/03_Transfer.ts)】
 
-
 **第4讲：账户**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/04_Account/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/04_Account/04_Account.ts)】
 
+**第5讲：Slot 与 Block**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/05_Block/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/05_Block/05_Block.ts)】
 
 
 ## Part3: Solana 智能合约开发
