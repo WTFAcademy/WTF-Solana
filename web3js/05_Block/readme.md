@@ -13,6 +13,16 @@ tags:
 
 # WTF Solana Web3.js 极简教程：第 5 讲：Slot 与 Block
 
+WTF Solana Web3.js 极简教程属于 WTF Solana 教程的一部分，由 WTF Academy 和 ChainBuff 共同推出。
+
+**推特**：[@0xAA_Science](https://twitter.com/0xAA_Science) ｜ [@WTFAcademy_](https://twitter.com/WTFAcademy_) ｜ [@ChainBuff](https://twitter.com/ChainBuff)
+
+**WTF Academy 社群：** [官网 wtf.academy](https://wtf.academy) | [微信群申请](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link) ｜ [Discord](https://discord.gg/5akcruXrsk)
+
+所有代码和教程开源在 GitHub: [github.com/WTFAcademy/WTF-Solana](https://github.com/WTFAcademy/WTF-Solana)
+
+---
+
 这一讲，我们将介绍 Solana 链上的时间机制核心：`slot`（插槽）与 `block`（区块），以及如何通过 Web3.js 读取相关信息。
 
 ## 1. 什么是 Slot 与 Block？
