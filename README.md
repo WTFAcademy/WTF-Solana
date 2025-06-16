@@ -25,6 +25,7 @@ npm install @solana/web3.js@1.98.0
 
 **第5讲：Slot 与 Block**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/05_Block/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/05_Block/05_Block.ts)】
 
+**第6讲：读取交易**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/06_ReadTx/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/06_ReadTx/06_ReadTx.ts)】
 
 ## Part3: Solana 智能合约开发
 负责人 Haynar @0xhay
