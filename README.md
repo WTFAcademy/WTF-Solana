@@ -27,7 +27,7 @@ npm install @solana/web3.js@1.98.0
 
 **第6讲：读取交易**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/06_ReadTx/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/06_ReadTx/06_ReadTx.ts)】
 
-**第6讲：读取区块**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/07_ReadBlock/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/07_ReadBlock/07_ReadBlock.ts)】
+**第7讲：读取区块**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/07_ReadBlock/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/07_ReadBlock/07_ReadBlock.ts)】
 
 ## Part3: Solana 智能合约开发
 负责人 Haynar @0xhay
