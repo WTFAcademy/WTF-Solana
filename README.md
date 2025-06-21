@@ -33,6 +33,8 @@ npm install @solana/web3.js@1.98.0
 
 **第9讲：发送交易**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/09_SendTx/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/09_SendTx/09_SendTx.ts)】
 
+**第10讲：优先费**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/10_CU/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/10_CU/10_CU.ts)】
+
 
 ## Part3: Solana 智能合约开发
 负责人 Haynar @0xhay
