@@ -21,7 +21,7 @@ WTF Solana Web3.js 极简教程属于 WTF Solana 教程的一部分，由 WTF Ac
 
 ---
 
-在本讲中，我们将介绍 Durable Nonce （持久Nonce）机制，支持构造可延迟广播的交易。
+在本讲中，我们将介绍 Durable Nonce （持久Nonce）机制，构造可延迟广播的交易。
 
 ## 1. 什么是 Durable Nonce
 
