@@ -2,11 +2,7 @@
 
 WTF Solana 教程由 [WTF Academy](https://wtf.academy) 和 [ChainBuff](https://chainbuff.com) 共同推出，旨在帮助开发者快速上手 Solana 开发。
 
-## Part1: Solana 基本架构
-负责人 Inky @XingqiWang
-
-
-## Part2: Solana Web3.js 极简教程
+## Part1: Solana Web3.js 极简教程
 负责人 0xAA @AmazingAng
 
 Solana web3.js是一个完整而简洁的JavaScript库，可以让开发者便捷地与Solana区块链交互，与以太坊的ethers.js库类似。你需要使用npm安装它：
@@ -14,6 +10,8 @@ Solana web3.js是一个完整而简洁的JavaScript库，可以让开发者便�
 ```bash
 npm install @solana/web3.js@1.98.0
 ```
+
+### 入门
 
 **第1讲：Hello Solana**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/01_HelloSolana/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/01_HelloSolana/01_HelloSolana.ts)】
 
@@ -34,6 +32,14 @@ npm install @solana/web3.js@1.98.0
 **第9讲：发送交易**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/09_SendTx/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/09_SendTx/09_SendTx.ts)】
 
 **第10讲：优先费**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/10_CU/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/10_CU/10_CU.ts)】
+
+### 进阶
+
+**第11讲：持久Nonce**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/11_Nonce/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/11_Nonce/11_Nonce.ts)】
+
+
+## Part2: Solana 基本架构
+负责人 Inky @XingqiWang
 
 
 ## Part3: Solana 智能合约开发
