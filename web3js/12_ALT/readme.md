@@ -9,7 +9,7 @@ tags:
  - nonceAccount
 ---
 
-# WTF Solana Web3.js 极简教程：第 11 讲：ALT和V0交易
+# WTF Solana Web3.js 极简教程：第 12 讲：ALT和V0交易
 
 WTF Solana Web3.js 极简教程属于 WTF Solana 教程的一部分，由 WTF Academy 和 ChainBuff 共同推出。
 
