@@ -37,6 +37,8 @@ npm install @solana/web3.js@1.98.0
 
 **第11讲：持久Nonce**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/11_Nonce/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/11_Nonce/11_Nonce.ts)】
 
+**第12讲：ALT和V0交易**：【[教程](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/12_ALT/readme.md)】【[Code](https://github.com/WTFAcademy/WTF-Solana/blob/main/web3js/12_ALT/12_ALT.ts)】
+
 
 ## Part2: Solana 基本架构
 负责人 Inky @XingqiWang
