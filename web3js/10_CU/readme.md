@@ -29,17 +29,17 @@ WTF Solana Web3.js 极简教程属于 WTF Solana 教程的一部分，由 WTF Ac
 
 Solana 上的交易费用分为两部分：
 
-1. 基本费：每笔交易都会收取固定的 5000 lamports 作为交易的基本费用（base fee），类似evm的base fee。
+1. 基本费：基本费按签名数计算，每个签名 5000 lamports。
 2. 优先费：Solana 支持优先费机制（priority fee）：在网络拥堵时，愿意付更高优先费的交易会被更快打包进区块。与evm的priority fee类似。
 
 Solana 上的每笔交易都需要一定的计算资源（Compute Units，简称 CU）。为了激励验证者优先处理你的交易，可以使用 `ComputeBudgetProgram` 设置 **CU 单价**，从而增加交易费用，计算公式：
 
-优先费用 = `computeUnitLimit × computeUnitPrice`
+优先费用（lamports）= `ceil(computeUnitLimit × computeUnitPrice / 1_000_000)`
 
 其中
 
 - `Compute Unit Price`：每计算单元支付的价格，类似于 EVM 的 gas price。以micro lamports计价，1,000,000 micro lamport = 1 lamport。
-- `Compute Unit Limit`：最大可使用的计算单元，类似于 EVM 的 gas limit。默认 200,000，最大值 1,400,000。
+- `Compute Unit Limit`：最大可使用的计算单元，类似于 EVM 的 gas limit。默认值按交易包含的指令计算，例如非内置程序指令各分配 200,000 CU，交易上限为 1,400,000 CU。
 
 
 默认情况下，Solana 使用零优先费（0 CU price），比如之前咱们发送的[交易](https://solscan.io/tx/3vr9oZwTcdbLGJfMEX5auy82FFScMBfb5fzfj5SELMqzGuCCNqPV44QsE8rQVTTTmbqTenM1Eogh7aaeN1jnup8g)。
@@ -104,7 +104,7 @@ const receiver = new PublicKey("4xxeGf2jZAyLVW1sEELTJy2Fd4hwRerNTDCg8ZQuH4tn");
 
 // 构造优先费指令
 const cuLimitIx = ComputeBudgetProgram.setComputeUnitLimit({ units: 200_000 });
-const cuPriceIx = ComputeBudgetProgram.setComputeUnitPrice({ microLamports: 10_000 }); // 每 CU 10,000，也就是 0.00001 SOL
+const cuPriceIx = ComputeBudgetProgram.setComputeUnitPrice({ microLamports: 10_000 }); // 每 CU 10,000 micro-lamports，即 0.01 lamport
 
 // 普通 SOL 转账指令
 const transferIx = SystemProgram.transfer({
@@ -137,7 +137,7 @@ main();
 查看交易：https://solscan.io/tx/533FfnoRXzU8vQfSW6qjBm8LjiEB7RUeuTic8SzmZ7LuAx3orVJhxttwN2qHisVmTLSTFDfb1gBBh4tCWCVZ7925
 ```
 
-可以看到，我们成功的在转账指令（第三个）前插入了 `SetComputeUnitLimit` 和 `SetComputeUnitPrice` 指令，将 CU 价格设置为 10000 micro lamports，也就是0.01 lamports；将 CU 上限设置为 140w。
+可以看到，我们成功的在转账指令（第三个）前插入了 `SetComputeUnitLimit` 和 `SetComputeUnitPrice` 指令，将 CU 价格设置为 10000 micro lamports，也就是0.01 lamports；将 CU 上限设置为 200,000。
 
 ![](./img/10-2.png)
 

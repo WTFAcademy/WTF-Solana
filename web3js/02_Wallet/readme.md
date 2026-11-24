@@ -38,7 +38,6 @@ const wallet = Keypair.generate();
 
 console.log("新钱包创建成功！");
 console.log("Public Key:", wallet.publicKey.toBase58());
-console.log("Private Key (base58):", bs58.encode(wallet.secretKey));
 ```
 
 ### 输出样例：
@@ -46,7 +45,6 @@ console.log("Private Key (base58):", bs58.encode(wallet.secretKey));
 ```
 新钱包创建成功！
 Public Key: 9Ujz...WYXh
-Private Key (base58): 3rcA...Ttzh
 ```
 
 > `secretKey` 是 `Uint8Array`，我们通常将其转为 base58 编码后保存。
@@ -58,10 +56,12 @@ Private Key (base58): 3rcA...Ttzh
 import fs from "fs";
 
 const privateKey58 = bs58.encode(wallet.secretKey);
-fs.writeFileSync("wallet.txt", privateKey58);
+fs.writeFileSync("wallet.txt", privateKey58, { flag: "wx", mode: 0o600 });
 console.log("私钥已保存到 wallet.txt");
 ```
 
+
+如果当前目录已有 `wallet.txt`，写入会失败，以保护现有钱包文件。
 
 ## 3. 从私钥导入钱包
 

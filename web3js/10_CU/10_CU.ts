@@ -24,7 +24,7 @@ const receiver = new PublicKey("4xxeGf2jZAyLVW1sEELTJy2Fd4hwRerNTDCg8ZQuH4tn");
 
 // 构造优先费指令
 const cuLimitIx = ComputeBudgetProgram.setComputeUnitLimit({ units: 200_000 });
-const cuPriceIx = ComputeBudgetProgram.setComputeUnitPrice({ microLamports: 10_000 }); // 每 CU 10,000 = 0.00001 SOL
+const cuPriceIx = ComputeBudgetProgram.setComputeUnitPrice({ microLamports: 10_000 }); // 每 CU 10,000 micro-lamports，即 0.01 lamport
 
 // 普通 SOL 转账指令
 const transferIx = SystemProgram.transfer({
