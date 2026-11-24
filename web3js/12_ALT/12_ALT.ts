@@ -55,12 +55,19 @@ const main = async () => {
   // const lookupTableAddress = new PublicKey("AWBzStFte72MdyqEi4EMBrb8QkwPsyjtkuxiMCt3AZtE");
 
   const lookupTableAccount = (
-    await connection.getAddressLookupTable(lookupTableAddress)
+    await connection.getAddressLookupTable(lookupTableAddress, { commitment: "confirmed" })
   ).value;
   console.log("ALT账户:", lookupTableAccount);
 
-  // 获取最新的 blockhash
-  const { blockhash } = await connection.getLatestBlockhash();
+  // 新增地址从下一个 slot 起才可用。
+  if (!lookupTableAccount) throw new Error("ALT account not found");
+  const deadline = Date.now() + 15_000;
+  while (await connection.getSlot("confirmed") <= lookupTableAccount.state.lastExtendedSlot) {
+    if (Date.now() >= deadline) throw new Error("ALT entries did not activate in time");
+    await new Promise(resolve => setTimeout(resolve, 400));
+  }
+
+  const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash("confirmed");
   // 转账指令
   const TransferIx = SystemProgram.transfer({
     fromPubkey: payer.publicKey,
@@ -73,17 +80,17 @@ const main = async () => {
     payerKey: payer.publicKey,
     recentBlockhash: blockhash,
     instructions: [TransferIx],
-  }).compileToV0Message(lookupTableAccount ? [lookupTableAccount] : []);
+  }).compileToV0Message([lookupTableAccount]);
 
   // 创建并发送交易
   const txV0 = new VersionedTransaction(messageV0);
   txV0.sign([payer]);
-  const signature = await connection.sendTransaction(txV0);
+  const signature = await connection.sendTransaction(txV0, { preflightCommitment: "confirmed" });
   console.log("交易已发送，签名:", signature);
 
   // 等待交易确认
   console.log("等待交易确认...");
-  const confirmation = await connection.confirmTransaction(signature, "confirmed");
+  const confirmation = await connection.confirmTransaction({ signature, blockhash, lastValidBlockHeight }, "confirmed");
 
   if (confirmation.value.err) {
     console.error("交易失败:", confirmation.value.err);
