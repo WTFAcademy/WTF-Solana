@@ -50,7 +50,7 @@ const main = async () => {
     const publicKey = new PublicKey("mpa4abUkjQoAvPzREkh5Mo75hZhPFQ2FSH6w7dWKuQ5");
     const balance = await connection.getBalance(publicKey);
     // 输出SOL余额
-    console.log(`SOL Balance: ${balance / LAMPORTS_PER_SOL} SOL`);
+    console.log(`SOL Balance: ${Number(balance) / LAMPORTS_PER_SOL} SOL`);
 }
 
 main();
@@ -90,7 +90,7 @@ const main = async () => {
     const publicKey = new PublicKey("mpa4abUkjQoAvPzREkh5Mo75hZhPFQ2FSH6w7dWKuQ5");
     const balance = await connection.getBalance(publicKey);
     // 输出SOL余额
-    console.log(`SOL Balance: ${balance / LAMPORTS_PER_SOL} SOL`);
+    console.log(`SOL Balance: ${Number(balance) / LAMPORTS_PER_SOL} SOL`);
 }
 
 main();

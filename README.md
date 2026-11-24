@@ -1,5 +1,7 @@
 # WTF Solana 教程
 
+示例使用 Solana Web3.js 3.2.1 和 Node.js 24+。进入 `web3js`，运行 `npm ci` 安装，然后用 `npx tsx <示例文件>` 运行。新版密钥、签名和序列化方法返回 Promise。用 `npm run check` 检查全部示例。
+
 WTF Solana 教程由 [WTF Academy](https://wtf.academy) 和 [ChainBuff](https://chainbuff.com) 共同推出，旨在帮助开发者快速上手 Solana 开发。
 
 ## Part1: Solana Web3.js 极简教程

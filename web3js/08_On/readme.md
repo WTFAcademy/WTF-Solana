@@ -92,13 +92,13 @@ console.log("订阅ID:", subscriptionId);
 
 ```ts
 const subscriptionId1 = connection.onProgramAccountChange(
-  TOKEN_PROGRAM_ID,
+  new PublicKey(TOKEN_PROGRAM_ADDRESS),
   (keyedAccountInfo) => {
     const accountPubkey = keyedAccountInfo.accountId.toBase58();
     console.log(`代币账户 ${accountPubkey} 更新！`);
-    const accountInfo = AccountLayout.decode(keyedAccountInfo.accountInfo.data);
+    const accountInfo = getTokenDecoder().decode(keyedAccountInfo.accountInfo.data);
     console.log(`mint ${accountInfo.mint.toBase58()}`);
-    console.log(`owner ${accountInfo.owner.toBase58()}`);
+    console.log(`owner ${accountInfo.owner}`);
     console.log(`amount ${accountInfo.amount}`);
   },
   "confirmed"
@@ -130,13 +130,13 @@ amount 132621716315
 const PNUT_MINT = new PublicKey("2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump"); // PNUT token地址
 
 const subscriptionId2 = connection.onProgramAccountChange(
-  TOKEN_PROGRAM_ID,
+  new PublicKey(TOKEN_PROGRAM_ADDRESS),
   (keyedAccountInfo) => {
     const accountPubkey = keyedAccountInfo.accountId.toBase58();
     console.log(`PNUT token账户 ${accountPubkey} 更新！`);
     //console.log(keyedAccountInfo);
-    const accountInfo = AccountLayout.decode(keyedAccountInfo.accountInfo.data);
-    console.log(`owner ${accountInfo.owner.toBase58()}`);
+    const accountInfo = getTokenDecoder().decode(keyedAccountInfo.accountInfo.data);
+    console.log(`owner ${accountInfo.owner}`);
     console.log(`amount ${accountInfo.amount}`);
   },
   "confirmed",

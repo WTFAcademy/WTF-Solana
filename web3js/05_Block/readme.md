@@ -154,7 +154,7 @@ Block内容: {
 // 4. 获取该 slot 的 block 时间（Unix 时间戳）
 const timestamp = await connection.getBlockTime(slot);
 if (timestamp !== null) {
-  console.log("区块时间:", new Date(timestamp * 1000).toLocaleString());
+  console.log("区块时间:", new Date(Number(timestamp) * 1000).toLocaleString());
 } else {
   console.log("无法获取时间戳（可能是跳过 slot）");
 }
@@ -184,8 +184,8 @@ const transaction = new Transaction({
 }).add(instruction);
 
 // 发送交易
-transaction.sign(sender); // 签名交易
-const signature = await connection.sendRawTransaction(transaction.serialize()); // 发送交易
+await transaction.sign(sender); // 签名交易
+const signature = await connection.sendRawTransaction(await transaction.serialize()); // 发送交易
 ```
 
 ## 5. 总结

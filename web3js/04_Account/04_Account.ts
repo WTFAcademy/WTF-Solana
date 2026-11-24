@@ -16,10 +16,10 @@ import {
   
   // 读取已有私钥作为付款账户
   const secretKeyBase58 = fs.readFileSync("wallet.txt", "utf-8");
-  const payer = Keypair.fromSecretKey(bs58.decode(secretKeyBase58));
+  const payer = await Keypair.fromSecretKey(bs58.decode(secretKeyBase58));
   
   // 创建新账户
-  const newAccount = Keypair.generate();
+  const newAccount = await Keypair.generate();
   
   // 你可以先用 SystemProgram 作为 owner（表示这个账户没有合约逻辑）
   const programId = SystemProgram.programId;
@@ -36,7 +36,7 @@ import {
     // 创建账户
     // 获取租金豁免所需 lamports
     const lamports = await connection.getMinimumBalanceForRentExemption(space);
-    console.log("需要的租金:", lamports / LAMPORTS_PER_SOL, "SOL");
+    console.log("需要的租金:", Number(lamports) / LAMPORTS_PER_SOL, "SOL");
   
     // 创建指令
     const instruction = SystemProgram.createAccount({

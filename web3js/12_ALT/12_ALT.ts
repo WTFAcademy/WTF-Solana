@@ -17,7 +17,7 @@ import fs from "fs";
 const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
 
 // 导入 payer 钱包
-const payer = Keypair.fromSecretKey(bs58.decode(fs.readFileSync("wallet.txt", "utf-8")));
+const payer = await Keypair.fromSecretKey(bs58.decode(fs.readFileSync("wallet.txt", "utf-8")));
 
 // 接收者地址（可以改为你的另一个钱包）
 const receiver = new PublicKey("4xxeGf2jZAyLVW1sEELTJy2Fd4hwRerNTDCg8ZQuH4tn");
@@ -28,7 +28,7 @@ const main = async () => {
 
   // 使用 createLookupTable 创建 ALT，得到createInst指令和ALT地址
   const [createIx, lookupTableAddress] =
-    AddressLookupTableProgram.createLookupTable({
+    await AddressLookupTableProgram.createLookupTable({
       authority: payer.publicKey,
       payer: payer.publicKey,
       recentSlot: slot,
@@ -84,7 +84,7 @@ const main = async () => {
 
   // 创建并发送交易
   const txV0 = new VersionedTransaction(messageV0);
-  txV0.sign([payer]);
+  await txV0.sign([payer]);
   const signature = await connection.sendTransaction(txV0, { preflightCommitment: "confirmed" });
   console.log("交易已发送，签名:", signature);
 

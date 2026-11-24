@@ -29,7 +29,7 @@ const connection = new Connection(clusterApiUrl("mainnet-beta"));
   // 4. 获取该 slot 的 block 时间（Unix 时间戳）
   const timestamp = await connection.getBlockTime(slot);
   if (timestamp !== null) {
-    console.log("区块时间:", new Date(timestamp * 1000).toLocaleString());
+    console.log("区块时间:", new Date(Number(timestamp) * 1000).toLocaleString());
   } else {
     console.log("无法获取时间戳（可能是跳过 slot）");
   }

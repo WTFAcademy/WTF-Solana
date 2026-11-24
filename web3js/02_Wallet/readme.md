@@ -34,7 +34,7 @@ WTF Solana Web3.js 极简教程属于 WTF Solana 教程的一部分，由 WTF Ac
 import { Keypair } from "@solana/web3.js";
 import bs58 from "bs58";
 
-const wallet = Keypair.generate();
+const wallet = await Keypair.generate();
 
 console.log("新钱包创建成功！");
 console.log("Public Key:", wallet.publicKey.toBase58());
@@ -70,7 +70,7 @@ console.log("私钥已保存到 wallet.txt");
 ```ts
 const savedKey58 = fs.readFileSync("wallet.txt", "utf-8");
 const recoveredSecretKey = bs58.decode(savedKey58);
-const recoveredWallet = Keypair.fromSecretKey(recoveredSecretKey);
+const recoveredWallet = await Keypair.fromSecretKey(recoveredSecretKey);
 
 console.log("钱包恢复成功！");
 console.log("Recovered Public Key:", recoveredWallet.publicKey.toBase58());

@@ -81,7 +81,7 @@ const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
 
 // 从本地导入发送者私钥（请确保保密）
 const secretKeyBase58 = fs.readFileSync("wallet.txt", "utf-8");
-const sender = Keypair.fromSecretKey(bs58.decode(secretKeyBase58));
+const sender = await Keypair.fromSecretKey(bs58.decode(secretKeyBase58));
 
 // 接收者地址（可以改为你的另一个钱包）
 const receiver = new PublicKey("4xxeGf2jZAyLVW1sEELTJy2Fd4hwRerNTDCg8ZQuH4tn");
@@ -89,7 +89,7 @@ const receiver = new PublicKey("4xxeGf2jZAyLVW1sEELTJy2Fd4hwRerNTDCg8ZQuH4tn");
 const main = async () => {
    // 1. 打印当前发送者余额
    const balance = await connection.getBalance(sender.publicKey);
-   console.log(`当前余额: ${balance / LAMPORTS_PER_SOL} SOL`);
+   console.log(`当前余额: ${Number(balance) / LAMPORTS_PER_SOL} SOL`);
 
    // 2. 构建转账指令（0.001 SOL）
    const instruction = SystemProgram.transfer({

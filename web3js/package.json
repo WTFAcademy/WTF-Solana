@@ -4,20 +4,27 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "check": "tsc --noEmit"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "typescript": "^5.4.5"
+        "typescript": "7.0.2",
+        "tsx": "4.23.15",
+        "@types/node": "26.6.6"
     },
     "dependencies": {
-        "@solana/spl-token": "^0.4.6",
-        "@solana/web3.js": "^1.98.0",
-        "axios": "^1.6.8",
-        "bigint-buffer": "^1.1.5",
-        "bn.js": "^5.2.2",
-        "bs58": "^5.0.0"
-    }
+        "@solana-program/token": "0.18.0",
+        "@solana/web3.js": "3.2.1",
+        "axios": "1.21.1",
+        "bigint-buffer": "1.1.5",
+        "bn.js": "5.2.5",
+        "bs58": "6.0.0",
+        "@solana/kit": "8.6.0"
+    },
+    "engines": {
+        "node": ">=24"
+    },
+    "type": "module"
 }

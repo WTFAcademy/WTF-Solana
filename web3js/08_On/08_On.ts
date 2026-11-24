@@ -1,5 +1,5 @@
 import { Connection, PublicKey, clusterApiUrl, LAMPORTS_PER_SOL } from "@solana/web3.js";
-import { TOKEN_PROGRAM_ID, AccountLayout} from "@solana/spl-token";
+import { TOKEN_PROGRAM_ADDRESS, getTokenDecoder } from "@solana-program/token";
 
 const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
 
@@ -10,7 +10,7 @@ const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
 // // 注册订阅，感受一下什么叫躺着赚钱
 // const subscriptionId = connection.onAccountChange(pubkey, (updatedAccountInfo, context) => {
 //   console.log("账户发生变化！");
-//   console.log("最新SOL余额:", updatedAccountInfo.lamports / LAMPORTS_PER_SOL);
+//   console.log("最新SOL余额:", Number(updatedAccountInfo.lamports) / LAMPORTS_PER_SOL);
 //   console.log("上下文信息:", context);
 // });
 
@@ -22,13 +22,13 @@ const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
 // 2. 监听代币账户变化
 // 2.1 监听所有代币账户变化
 // const subscriptionId1 = connection.onProgramAccountChange(
-//   TOKEN_PROGRAM_ID,
+//   new PublicKey(TOKEN_PROGRAM_ADDRESS),
 //   (keyedAccountInfo) => {
 //     const accountPubkey = keyedAccountInfo.accountId.toBase58();
 //     console.log(`代币账户 ${accountPubkey} 更新！`);
-//     const accountInfo = AccountLayout.decode(keyedAccountInfo.accountInfo.data);
+//     const accountInfo = getTokenDecoder().decode(keyedAccountInfo.accountInfo.data);
 //     console.log(`mint ${accountInfo.mint.toBase58()}`);
-//     console.log(`owner ${accountInfo.owner.toBase58()}`);
+//     console.log(`owner ${accountInfo.owner}`);
 //     console.log(`amount ${accountInfo.amount}`);
 //   },
 //   "confirmed"
@@ -41,13 +41,13 @@ const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
 // const PNUT_MINT = new PublicKey("2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump"); // PNUT token地址
 
 // const subscriptionId2 = connection.onProgramAccountChange(
-//   TOKEN_PROGRAM_ID,
+//   new PublicKey(TOKEN_PROGRAM_ADDRESS),
 //   (keyedAccountInfo) => {
 //     const accountPubkey = keyedAccountInfo.accountId.toBase58();
 //     console.log(`PNUT token账户 ${accountPubkey} 更新！`);
 //     //console.log(keyedAccountInfo);
-//     const accountInfo = AccountLayout.decode(keyedAccountInfo.accountInfo.data);
-//     console.log(`owner ${accountInfo.owner.toBase58()}`);
+//     const accountInfo = getTokenDecoder().decode(keyedAccountInfo.accountInfo.data);
+//     console.log(`owner ${accountInfo.owner}`);
 //     console.log(`amount ${accountInfo.amount}`);
 //   },
 //   "confirmed",

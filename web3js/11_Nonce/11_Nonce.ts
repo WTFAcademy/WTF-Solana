@@ -15,13 +15,13 @@ import fs from "fs";
 const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
 
 // 导入 payer 钱包
-const payer = Keypair.fromSecretKey(bs58.decode(fs.readFileSync("wallet.txt", "utf-8")));
+const payer = await Keypair.fromSecretKey(bs58.decode(fs.readFileSync("wallet.txt", "utf-8")));
 
 // 接收者地址（可以改为你的另一个钱包）
 const receiver = new PublicKey("4xxeGf2jZAyLVW1sEELTJy2Fd4hwRerNTDCg8ZQuH4tn");
 
 // 创建 nonce account
-const nonceAccount = Keypair.generate();
+const nonceAccount = await Keypair.generate();
 const noncePubkey = nonceAccount.publicKey;
 
 const main = async () => {
@@ -70,9 +70,9 @@ const main = async () => {
   tx2.recentBlockhash = info?.nonce;
   tx2.feePayer = payer.publicKey;
 
-  tx2.sign(payer); // 必须由 nonce authority 签名
+  await tx2.sign(payer); // 必须由 nonce authority 签名
 
-  const serialized = tx2.serialize();
+  const serialized = await tx2.serialize();
 
   // 可离线保存后广播
   const sig2 = await connection.sendRawTransaction(serialized);

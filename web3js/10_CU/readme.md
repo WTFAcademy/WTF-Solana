@@ -97,7 +97,7 @@ const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
 
 // 钱包
 const secretKey = bs58.decode(fs.readFileSync("wallet.txt", "utf-8"));
-const payer = Keypair.fromSecretKey(secretKey);
+const payer = await Keypair.fromSecretKey(secretKey);
 
 // 接收者地址（可以改为你的另一个钱包）
 const receiver = new PublicKey("4xxeGf2jZAyLVW1sEELTJy2Fd4hwRerNTDCg8ZQuH4tn");

@@ -15,7 +15,7 @@ const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
 
 // 从本地导入发送者私钥（请确保保密）
 const secretKeyBase58 = fs.readFileSync("wallet.txt", "utf-8");
-const sender = Keypair.fromSecretKey(bs58.decode(secretKeyBase58));
+const sender = await Keypair.fromSecretKey(bs58.decode(secretKeyBase58));
 
 // 接收者地址（可以改为你的另一个钱包）
 const receiver = new PublicKey("4xxeGf2jZAyLVW1sEELTJy2Fd4hwRerNTDCg8ZQuH4tn");
@@ -36,17 +36,17 @@ const main = async () => {
   transaction.feePayer = sender.publicKey;
   
   // 签名交易
-  transaction.sign(sender);
+  await transaction.sign(sender);
   
   // 序列化交易，转换为Buffer类型
-  const serializedTransaction = transaction.serialize();
+  const serializedTransaction = await transaction.serialize();
   
   // 使用 sendRawTransaction 发送交易
   console.log("正在发送交易...");
   const signature = await connection.sendRawTransaction(serializedTransaction, {
-    skipPreflight: true, // 是否跳过预检查，用于加速
+    skipPreflight: false, // 发送前让节点检查交易
     preflightCommitment: "confirmed", // 预检查的确认级别
-    maxRetries: 0, // 最大重试次数
+    maxRetries: 2n, // 最大重试次数
   });
   
   console.log("交易已发送，签名:", signature);

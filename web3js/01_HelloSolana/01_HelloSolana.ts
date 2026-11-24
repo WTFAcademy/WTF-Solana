@@ -9,7 +9,7 @@ const main = async () => {
     // 输出LAMPORTS_PER_SOL
     console.log(`LAMPORTS PER SOL: ${LAMPORTS_PER_SOL}`);
     // 输出SOL余额
-    console.log(`SOL Balance: ${balance / LAMPORTS_PER_SOL} SOL`);
+    console.log(`SOL Balance: ${Number(balance) / LAMPORTS_PER_SOL} SOL`);
 }
 
 main();
